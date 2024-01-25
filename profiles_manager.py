@@ -3,6 +3,7 @@ from pathlib import Path
 import shutil
 import info
 from driver.main import d
+from .cli import Client
 
 class Manager:
     def __init__(self):
@@ -71,6 +72,11 @@ class Manager:
     def clear_all(self, ):
         shutil.rmtree(self.profiles_dir)
         os.mkdir(self.profiles_dir)
+
+    def cli(self, script, args):
+        Client(self, script, args)
+
+
 
     
 
